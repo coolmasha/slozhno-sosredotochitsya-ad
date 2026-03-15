@@ -28,6 +28,15 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
+.accent-link:hover {
+  border-bottom: 1px solid var(--link-outline);
+  outline: none;
+}
+
+.accent-link:focus {
+  outline: 1px solid var(--link-outline);
+}
+
 @media (min-width: 768px) {
   .page {
     padding: 20px;

@@ -6,15 +6,13 @@
   --logo-color: #ff0070;
   --decorative-bracket-color: #ff0070;
 
+  --link-outline: #F1B2CE;
+
   --menu-button-color: #ff0070;
   --menu-button-hover-color: #ff007066;
 
   --title-color: #db00ff;
 
   --section-title-color: #ff0070;
-  --article-text-color: #f1b2ce;
-}
-
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+  --article-text-color: #F1B2CE;
 }
