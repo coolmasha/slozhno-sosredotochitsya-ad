@@ -23,6 +23,11 @@
   color: var(--accent-color-text);
 }
 
+.accent-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
 @media (min-width: 768px) {
   .page {
     padding: 20px;
@@ -66,7 +71,7 @@
 
 .decorated-zone {
   position: relative;
-  min-block-size: 97vh;
+  min-block-size: 100vh;
 }
 
 .decorated-zone::before {
@@ -145,9 +150,6 @@
 }
 
 @media (min-width: 768px) {
-  .decorated-zone {
-    min-block-size: 96vh;
-  }
 
   .header__theme-menu {
     margin: 10px 0 0;
@@ -163,9 +165,6 @@
 }
 
 @media (min-width: 1024px) {
-  .decorated-zone {
-    min-block-size: 94.7vh;
-  }
 
   .header__theme-menu {
     justify-self: center;
