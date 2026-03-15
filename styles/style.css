@@ -1,5 +1,346 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  margin: 0 auto;
+  padding: 10px;
+  font-size: var(--font-size);
+  font-weight: 400;
+  line-height: 23.4px;
+  background-image: var(--cover-image);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.accent-title {
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: var(--title-size-mobile);
+  line-height: 83%;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--accent-color-text);
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .accent-title {
+    font-size: var(--title-size-desktop);
+  }
+}
+
+/* Стили для шапки */
+
+.header {
+  display: grid;
+  grid-template-rows: auto max-content auto;
+  align-items: center;
+}
+
+.header__decorative-logo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 2px 10px 0 0;
+  color: var(--logo-color);
+  inset-inline-end: 0;
+  inset-block-start: 0;
+}
+
+.header__decorative-logo::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 4px var(--logo-color);
+  background-color: var(--logo-color);
+  inline-size: 7px;
+  block-size: 7px;
+}
+
+.decorated-zone {
+  position: relative;
+  min-block-size: 97vh;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  border-top: 1px solid var(--decorative-bracket-color);
+  border-right: 1px solid var(--decorative-bracket-color);
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid var(--decorative-bracket-color);
+  border-left: 1px solid var(--decorative-bracket-color);
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-end: 0;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  margin: 5px 0 0;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  padding: 0 13px;
+  outline: 1px solid transparent;
+  color: var(--menu-button-color);
+  text-transform: lowercase;
+  background-color: transparent;
+  transition-duration: 0.2s;
+  transition-property: outline;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--menu-button-hover-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--menu-button-color);
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--menu-button-color);
+  pointer-events: none;
+}
+
+.header__title {
+  align-self: self-start;
+  margin: 15px 0 0;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__text {
+  font-weight: 700;
+  justify-self: end;
+  padding-right: 50px;
+  max-inline-size: 364px;
+}
+
+@media (min-width: 768px) {
+  .decorated-zone {
+    min-block-size: 96vh;
+  }
+
+  .header__theme-menu {
+    margin: 10px 0 0;
+  }
+
+  .header__title {
+    margin: 20px 0 0 -20px;
+  }
+
+  .header__text {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .decorated-zone {
+    min-block-size: 94.7vh;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: self-start;
+    margin: 0;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__title {
+    margin: 45px 0 0 -20px;
+  }
+
+  .header__text {
+    margin: 0;
+    padding: 0;
+    max-inline-size: 491px;
+  }
+}
+
+/* Стили для главного контента */
+
+.section__title {
+  color: var(--section-title-color);
+  font-size: var(--font-size);
+  font-weight: 700;
+  line-height: 23.4px;
+  margin: 0 0 20px;
+}
+
+.section__item-title {
+  font-weight: 700;
+  font-size: var(--font-size);
+  line-height: 23.4px;
+  margin: 0 0 10px;
+}
+
+.section__item-subtitle {
+  font-weight: 400;
+  font-size: var(--font-size);
+  line-height: 23.4px;
+  margin: 0 0 10px;
+}
+
+.section__item-text {
+  color: var(--article-text-color);
+  font-size: var(--font-size);
+  font-weight: 400;
+  line-height: 23.4px;
+  margin: 0 0 20px;
+}
+
+.section__why {
+  margin: 40px 0 0;
+}
+
+.section__what {
+  margin: 30px 0 0;
+}
+
+.section__how {
+  margin: 30px 0 0;
+}
+
+.section__gallery {
+  margin: 30px 0 0;
+}
+
+.section__gallery-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, fit-content);
+  row-gap: 10px;
+}
+
+.gallery-image {
+  inline-size: 100%;
+}
+
+@media (min-width: 768px) {
+  .section__why {
+    display: grid;
+    grid-template-columns: 236px 1fr;
+    gap: var(--gap);
+    margin: 60px 0 0;
+  }
+
+  .section__what {
+    margin: 60px 0 0;
+  }
+
+  .what__title {
+    max-inline-size: 236px;
+  }
+
+  .section__how {
+    display: grid;
+    grid-template-columns: 236px 1fr;
+    column-gap: var(--gap);
+    margin: 60px 0 0;
+  }
+
+  .section__gallery {
+    margin: 60px 0 0;
+  }
+
+  .section__gallery-list {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, fit-content);
+    gap: var(--gap);
+    margin: 20px 0 0;
+  }
+
+  .section__gallery-item:nth-child(1) {
+    grid-column: 1 / 3;
+  }
+
+  .section__gallery-item:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+
+  .section__gallery-item:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  .section__gallery-item:last-child {
+    grid-column: 2 / 4;
+  }
+
+  .gallery-image {
+    object-fit: cover;
+    object-position: top;
+    block-size: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section__why {
+    grid-template-columns: 314px 1fr;
+  }
+
+  .what__title {
+    max-inline-size: 314px;
+  }
+
+  .section__what-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: var(--gap);
+  }
+
+  .section__how {
+    grid-template-columns: 314px 1fr;
+  }
+}
+
+/* Стили для подвала */
+
+.footer {
+  margin: 40px 0 0;
+  display: grid;
+}
+
+.footer__title {
+  justify-self: center;
+  align-self: center;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+@media (min-width: 768px) {
+  .footer {
+    margin: 60px 0 0;
+  }
 }
